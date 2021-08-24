@@ -1,5 +1,10 @@
-<?xml version="1.0"?>
-<robot name="color_box">
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="color_box">
+
+  <xacro:property name="YAML_FILE" value="$(find gazebo_ros_model_color)/configs/colors.yaml" />
+  <xacro:property name="COLORS" value="${load_yaml(YAML_FILE)}"/>
+
   <link name="world"/>
 
   <joint name="world_box_joint" type="fixed">
@@ -33,7 +38,8 @@
       <plugin name="gazebo_ros_model_color" filename="libgazebo_ros_model_color.so">
         <robotNamespace>/</robotNamespace>
         <serviceName>/my_box_color</serviceName>
-        <color>1.0 1.0 1.0 1.0</color>
+        <!-- <color>0.0 1.0 1.0 1.0</color> -->
+        <color>${COLORS['color_2']}</color>
       </plugin>
     </visual>
   </gazebo>
