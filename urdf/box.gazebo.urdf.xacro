@@ -39,7 +39,7 @@
         <robotNamespace>/</robotNamespace>
         <serviceName>/my_box_color</serviceName>
         <!-- <color>0.0 1.0 1.0 1.0</color> -->
-        <color>${COLORS['color_2']}</color>
+        <color>${COLORS['color_0']}</color>
       </plugin>
     </visual>
   </gazebo>
